@@ -5,3 +5,11 @@ seaborn
 scikit-learn
 xgboost
 tensorflow
+dvc
+dvc[gdrive]
+pytest
+tox
+flake8
+flask
+gunicorn
+mlflow

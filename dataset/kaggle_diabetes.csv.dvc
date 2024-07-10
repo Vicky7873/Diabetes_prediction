@@ -1,0 +1,5 @@
+outs:
+- md5: 61eefdd65e4b474c3b4614c51ca93ff0
+  size: 60057
+  hash: md5
+  path: kaggle_diabetes.csv
