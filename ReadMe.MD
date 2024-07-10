@@ -17,6 +17,6 @@ git push -u origin main
 # dvc push
 
 # when we want to pull the data set
-# touch cmd to create files in folder using terminal
+# touch cmd to create files in folder using terminal -> touch src/get_data.py
 # mv get_data.py src -> move file from one to another folder
 # 
