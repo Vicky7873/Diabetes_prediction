@@ -10,3 +10,13 @@ git branch -M main
 git remote add origin https://github.com/Vicky7873/Diabetes_prediction.git
 git push -u origin main
 
+# create temp.py to create folders and files
+# dvc init
+# dvc add dataset/kaggle_diabetes.csv
+# dvc remote add -d storage gdrive://1KI0Y7QQbUfqC4o0nKizJHvMx2mBo9rH7
+# dvc push
+
+# when we want to pull the data set
+# touch cmd to create files in folder using terminal
+# mv get_data.py src -> move file from one to another folder
+# 

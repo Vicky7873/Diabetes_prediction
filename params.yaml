@@ -1,0 +1,10 @@
+base:
+  project: "Diabetes prediction"
+  target_col: "Outcome"
+  random_state: 42
+
+data_source:
+  dataset: "dataset/kaggle_diabetes.csv"
+
+load_data:
+  dataset: "data/raw/kaggle_diabetes.csv"
