@@ -29,6 +29,8 @@ def split_data(config_path):
     y_train.to_csv(y_train_path,sep=",",index=False,header=True)
     y_test.to_csv(y_tet_path,sep=",",index=False,header=True)
 
+    return X_train,X_test,y_train,y_test
+
 if __name__ =="__main__":
     args = argparse.ArgumentParser()
     args.add_argument("--config",default="params.yaml")

@@ -15,3 +15,7 @@ split_data:
   train_path_y: data/processed/y_train.csv
   test_path_y: data/processed/y_test.csv
   test_size: 0.2
+
+transform_data:
+  X_train_transform: data/transform/X_train_transform.csv
+  X_test_transform: data/transform/X_test_transform.csv
