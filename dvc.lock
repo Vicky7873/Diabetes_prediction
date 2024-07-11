@@ -16,3 +16,111 @@ stages:
       hash: md5
       md5: 61eefdd65e4b474c3b4614c51ca93ff0
       size: 60057
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: params.yaml
+      hash: md5
+      md5: 50ac31668eb366de040bac7ccaf396eb
+      size: 771
+    - path: src/load_data.py
+      hash: md5
+      md5: 61926f48a21e968838b35b39a945de88
+      size: 607
+    outs:
+    - path: data/raw/kaggle_diabetes.csv
+      hash: md5
+      md5: e8f41ee0ef40dc1efb9fba638227c94c
+      size: 60517
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/raw/kaggle_diabetes.csv
+      hash: md5
+      md5: e8f41ee0ef40dc1efb9fba638227c94c
+      size: 60517
+    - path: params.yaml
+      hash: md5
+      md5: 50ac31668eb366de040bac7ccaf396eb
+      size: 771
+    - path: src/split_data.py
+      hash: md5
+      md5: 847c6906b78c9992ef67aa107aa9bd32
+      size: 1339
+    outs:
+    - path: data/processed/X_test.csv
+      hash: md5
+      md5: b1dc147f3377263787a72ecc9335b935
+      size: 11377
+    - path: data/processed/X_train.csv
+      hash: md5
+      md5: 95ff72ade30f9114ef477256a4c8dcb2
+      size: 45221
+    - path: data/processed/y_test.csv
+      hash: md5
+      md5: 368a09cb5922c6c1a0498a6124f747ab
+      size: 808
+    - path: data/processed/y_train.csv
+      hash: md5
+      md5: 67a7ac1bf7b392fd19b3da75406c78c7
+      size: 3208
+  transform_data:
+    cmd: python src/standrdize_data.py --config=params.yaml
+    deps:
+    - path: data/processed/X_test.csv
+      hash: md5
+      md5: b1dc147f3377263787a72ecc9335b935
+      size: 11377
+    - path: data/processed/X_train.csv
+      hash: md5
+      md5: 95ff72ade30f9114ef477256a4c8dcb2
+      size: 45221
+    - path: params.yaml
+      hash: md5
+      md5: 50ac31668eb366de040bac7ccaf396eb
+      size: 771
+    - path: src/standrdize_data.py
+      hash: md5
+      md5: cc84cdb24ca037bd80a627fae8952bf6
+      size: 1140
+    outs:
+    - path: data/transform/X_test_transform.csv
+      hash: md5
+      md5: 3519a6e27d730bf2248bc80376d62284
+      size: 63010
+    - path: data/transform/X_train_transform.csv
+      hash: md5
+      md5: f9d909caa71eae7a7dda53ab08dc86c7
+      size: 251483
+  train_model:
+    cmd: python src/ANN_train.py --config=params.yaml
+    deps:
+    - path: data/processed/y_test.csv
+      hash: md5
+      md5: 368a09cb5922c6c1a0498a6124f747ab
+      size: 808
+    - path: data/processed/y_train.csv
+      hash: md5
+      md5: 67a7ac1bf7b392fd19b3da75406c78c7
+      size: 3208
+    - path: data/transform/X_test_transform.csv
+      hash: md5
+      md5: 3519a6e27d730bf2248bc80376d62284
+      size: 63010
+    - path: data/transform/X_train_transform.csv
+      hash: md5
+      md5: f9d909caa71eae7a7dda53ab08dc86c7
+      size: 251483
+    - path: params.yaml
+      hash: md5
+      md5: 50ac31668eb366de040bac7ccaf396eb
+      size: 771
+    - path: src/ANN_train.py
+      hash: md5
+      md5: 72058fb2d6f2b92f71412c49b96d1eff
+      size: 2999
+    outs:
+    - path: saved_models/ann_model.h5
+      hash: md5
+      md5: 304f17fabf0ec9831aab7343004b6d58
+      size: 226817
