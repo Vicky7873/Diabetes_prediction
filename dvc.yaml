@@ -1,0 +1,51 @@
+stages:
+  get_data:
+    cmd: python src/get_data.py --config=params.yaml
+    deps:
+      - src/get_data.py
+      - params.yaml
+    outs:
+      - dataset/kaggle_diabetes.csv
+
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+      - src/load_data.py
+      - params.yaml
+    outs:
+      - data/raw/kaggle_diabetes.csv
+    
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+      - src/split_data.py
+      - params.yaml
+      - data/raw/kaggle_diabetes.csv
+    outs:
+      - data/processed/X_train.csv
+      - data/processed/X_test.csv
+      - data/processed/y_train.csv
+      - data/processed/y_test.csv
+
+  transform_data:
+    cmd: python src/standrdize_data.py --config=params.yaml
+    deps:
+      - src/standrdize_data.py
+      - params.yaml
+      - data/processed/X_train.csv
+      - data/processed/X_test.csv
+    outs:
+      - data/transform/X_train_transform.csv
+      - data/transform/X_test_transform.csv
+
+  train_model:
+    cmd: python src/ANN_train.py --config=params.yaml
+    deps:
+      - src/ANN_train.py
+      - params.yaml
+      - data/transform/X_train_transform.csv
+      - data/transform/X_test_transform.csv
+      - data/processed/y_train.csv
+      - data/processed/y_test.csv
+    outs:
+      - saved_models/ann_model.h5
