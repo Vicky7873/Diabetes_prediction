@@ -5,6 +5,7 @@ base:
 
 data_source:
   dataset: "dataset/kaggle_diabetes.csv"
+  # url: https://drive.google.com/drive/folders/1MadEFVdvFLcLruPgZlNHM7_OlsYWmvSO?usp=sharing
 
 load_data:
   dataset: "data/raw/kaggle_diabetes.csv"

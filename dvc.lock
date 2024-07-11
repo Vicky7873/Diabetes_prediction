@@ -1,28 +1,12 @@
 schema: '2.0'
 stages:
-  get_data:
-    cmd: python src/get_data.py --config=params.yaml
-    deps:
-    - path: params.yaml
-      hash: md5
-      md5: 50ac31668eb366de040bac7ccaf396eb
-      size: 771
-    - path: src/get_data.py
-      hash: md5
-      md5: 737552b8a62fbbc4f43ad51dbc788267
-      size: 1505
-    outs:
-    - path: dataset/kaggle_diabetes.csv
-      hash: md5
-      md5: 61eefdd65e4b474c3b4614c51ca93ff0
-      size: 60057
   load_data:
     cmd: python src/load_data.py --config=params.yaml
     deps:
     - path: params.yaml
       hash: md5
-      md5: 50ac31668eb366de040bac7ccaf396eb
-      size: 771
+      md5: 19b6e5bf274b0de27824d7143467fc75
+      size: 865
     - path: src/load_data.py
       hash: md5
       md5: 61926f48a21e968838b35b39a945de88
@@ -41,8 +25,8 @@ stages:
       size: 60517
     - path: params.yaml
       hash: md5
-      md5: 50ac31668eb366de040bac7ccaf396eb
-      size: 771
+      md5: 19b6e5bf274b0de27824d7143467fc75
+      size: 865
     - path: src/split_data.py
       hash: md5
       md5: 847c6906b78c9992ef67aa107aa9bd32
@@ -77,8 +61,8 @@ stages:
       size: 45221
     - path: params.yaml
       hash: md5
-      md5: 50ac31668eb366de040bac7ccaf396eb
-      size: 771
+      md5: 19b6e5bf274b0de27824d7143467fc75
+      size: 865
     - path: src/standrdize_data.py
       hash: md5
       md5: cc84cdb24ca037bd80a627fae8952bf6
@@ -113,8 +97,8 @@ stages:
       size: 251483
     - path: params.yaml
       hash: md5
-      md5: 50ac31668eb366de040bac7ccaf396eb
-      size: 771
+      md5: 19b6e5bf274b0de27824d7143467fc75
+      size: 865
     - path: src/ANN_train.py
       hash: md5
       md5: 72058fb2d6f2b92f71412c49b96d1eff
@@ -122,5 +106,5 @@ stages:
     outs:
     - path: saved_models/ann_model.h5
       hash: md5
-      md5: 304f17fabf0ec9831aab7343004b6d58
+      md5: 6565710c25223bd8ed41bbbd0b4db8d6
       size: 226817
