@@ -19,3 +19,17 @@ split_data:
 transform_data:
   X_train_transform: data/transform/X_train_transform.csv
   X_test_transform: data/transform/X_test_transform.csv
+
+ANN:
+  activation: "relu"
+  loss: "binary_crossentropy"
+  optimizer: 'adam'
+  kernel_initializer: 'uniform'
+  metrics: 'accuracy'
+  epochs: 200
+  batch_size: 32
+  input_dim: 8
+  sig_act: 'sigmoid'
+
+model_save:
+  model_dir: "saved_models/ann_model.h5"

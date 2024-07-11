@@ -24,6 +24,8 @@ def stc_data(config_path):
 
     print(X_test_transform.head(2))
     print(X_train_transform.head(2))
+
+    return X_train_transform,X_test_transform
     
 
 if __name__ == "__main__":
