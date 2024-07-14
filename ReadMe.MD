@@ -19,4 +19,12 @@ git push -u origin main
 # when we want to pull the data set
 # touch cmd to create files in folder using terminal -> touch src/get_data.py
 # mv get_data.py src -> move file from one to another folder
-# 
+# All the process done
+ <!-- done the get_data,load_data_split_data,standaridize_data,train the xg model
+ those steps are done by the notebooks
+ and dump the all the model on saved_models
+  -->
+
+# Made the app.py where it will get the data and transform the data then give us the prediction
+# Dockerize the application 
+# push into AWS via main.yaml
