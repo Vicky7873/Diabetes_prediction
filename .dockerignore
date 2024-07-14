@@ -24,8 +24,5 @@
 **/secrets.dev.yaml
 **/values.dev.yaml
 
-# Include Dockerfile
-!Dockerfile
-
 LICENSE
 README.md
