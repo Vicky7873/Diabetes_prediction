@@ -23,6 +23,8 @@ COPY . .
 # Make port 8888 available to the world outside this container
 EXPOSE 8999
 COPY src/ /app/src
+COPY saved_models/ /app/saved_models
+
 # Set PYTHONPATH to include src folder
 ENV PYTHONPATH="/app/src:${PYTHONPATH}"
 
