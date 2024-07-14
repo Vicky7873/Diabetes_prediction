@@ -6,6 +6,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from get_data import read_params
 from split_data import split_data
+import pickle
 
 def stc_data(config_path):
     config = read_params(config_path)
@@ -24,6 +25,8 @@ def stc_data(config_path):
 
     print(X_test_transform.head(2))
     print(X_train_transform.head(2))
+    sc_path = config["scalar_model"]["scalar_dir"]
+    pickle.dump(scalar, open(sc_path, 'wb'))
 
     return X_train_transform,X_test_transform
     

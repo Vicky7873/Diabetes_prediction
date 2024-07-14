@@ -5,8 +5,8 @@ stages:
     deps:
     - path: params.yaml
       hash: md5
-      md5: 19b6e5bf274b0de27824d7143467fc75
-      size: 865
+      md5: dab4368f2570128d9257e38341ce11ea
+      size: 1039
     - path: src/load_data.py
       hash: md5
       md5: 61926f48a21e968838b35b39a945de88
@@ -25,8 +25,8 @@ stages:
       size: 60517
     - path: params.yaml
       hash: md5
-      md5: 19b6e5bf274b0de27824d7143467fc75
-      size: 865
+      md5: dab4368f2570128d9257e38341ce11ea
+      size: 1039
     - path: src/split_data.py
       hash: md5
       md5: 847c6906b78c9992ef67aa107aa9bd32
@@ -61,12 +61,12 @@ stages:
       size: 45221
     - path: params.yaml
       hash: md5
-      md5: 19b6e5bf274b0de27824d7143467fc75
-      size: 865
+      md5: dab4368f2570128d9257e38341ce11ea
+      size: 1039
     - path: src/standrdize_data.py
       hash: md5
-      md5: cc84cdb24ca037bd80a627fae8952bf6
-      size: 1140
+      md5: 26fe4aedca67c766d60f71ad5e0bf700
+      size: 1250
     outs:
     - path: data/transform/X_test_transform.csv
       hash: md5
@@ -76,8 +76,12 @@ stages:
       hash: md5
       md5: f9d909caa71eae7a7dda53ab08dc86c7
       size: 251483
+    - path: saved_models/scalar.pkl
+      hash: md5
+      md5: b27cb28883e0e7baad29ef523b5028c0
+      size: 833
   train_model:
-    cmd: python src/ANN_train.py --config=params.yaml
+    cmd: python src/xg_train.py --config=params.yaml
     deps:
     - path: data/processed/y_test.csv
       hash: md5
@@ -97,14 +101,14 @@ stages:
       size: 251483
     - path: params.yaml
       hash: md5
-      md5: 19b6e5bf274b0de27824d7143467fc75
-      size: 865
-    - path: src/ANN_train.py
+      md5: dab4368f2570128d9257e38341ce11ea
+      size: 1039
+    - path: src/xg_train.py
       hash: md5
-      md5: 72058fb2d6f2b92f71412c49b96d1eff
-      size: 2999
+      md5: 4d8da6da041bb7ef084409d60c867bde
+      size: 1681
     outs:
-    - path: saved_models/ann_model.h5
+    - path: saved_models/xgb_model.pkl
       hash: md5
-      md5: 6565710c25223bd8ed41bbbd0b4db8d6
-      size: 226817
+      md5: 85f187c3e89e96c37b049f362bbb9b14
+      size: 597012

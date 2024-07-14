@@ -34,3 +34,13 @@ ANN:
 
 model_save:
   model_dir: "saved_models/ann_model.h5"
+
+XGB:
+  learning_rate: 0.1
+  max_depth: 10
+  n_estimators: 200
+
+model_save1:
+  model_dir1: "saved_models/xgb_model.pkl"
+scalar_model:
+  scalar_dir: "saved_models/scalar.pkl"

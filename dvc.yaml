@@ -29,15 +29,29 @@ stages:
     outs:
     - data/transform/X_train_transform.csv
     - data/transform/X_test_transform.csv
+    - saved_models/scalar.pkl
+
+  # train_model:
+  #   cmd: python src/ANN_train.py --config=params.yaml
+  #   deps:
+  #   - src/ANN_train.py
+  #   - params.yaml
+  #   - data/transform/X_train_transform.csv
+  #   - data/transform/X_test_transform.csv
+  #   - data/processed/y_train.csv
+  #   - data/processed/y_test.csv
+  #   outs:
+  #   - saved_models/ann_model.h5
 
   train_model:
-    cmd: python src/ANN_train.py --config=params.yaml
+    cmd: python src/xg_train.py --config=params.yaml
     deps:
-    - src/ANN_train.py
+    - src/xg_train.py
     - params.yaml
     - data/transform/X_train_transform.csv
     - data/transform/X_test_transform.csv
     - data/processed/y_train.csv
     - data/processed/y_test.csv
     outs:
-    - saved_models/ann_model.h5
+    - saved_models/xgb_model.pkl
+
