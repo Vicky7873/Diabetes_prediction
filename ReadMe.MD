@@ -27,4 +27,6 @@ git push -u origin main
 
 # Made the app.py where it will get the data and transform the data then give us the prediction
 # Dockerize the application 
+docker build -t my-flask-app .  
+docker run -p 8999:8999 my-flask-app
 # push into AWS via main.yaml

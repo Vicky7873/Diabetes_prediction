@@ -13,8 +13,12 @@ app = Flask(__name__,template_folder="temp")
 
 
 
-model = pickle.load(open("/Users/bhikipallai/Desktop/Projects/Machine_Learning_Projects/saved_models/xgb_model.pkl","rb"))
-scalar = pickle.load(open("/Users/bhikipallai/Desktop/Projects/Machine_Learning_Projects/saved_models/p1.pkl", "rb"))
+# model = pickle.load(open("/Users/bhikipallai/Desktop/Projects/Machine_Learning_Projects/saved_models/xgb_model.pkl","rb"))
+# Update this line in your app.py
+model = pickle.load(open("saved_models/xgb_model.pkl", "rb"))
+
+# model = pickle.load(open("/app/saved_models/xgb_model.pkl","rb"))
+scalar = pickle.load(open("saved_models/p1.pkl", "rb"))
 
 @app.route("/",methods = ["GET"])
 def index():
