@@ -28,7 +28,7 @@ COPY saved_models/ /app/saved_models
 # Set PYTHONPATH to include src folder
 ENV PYTHONPATH="/app/src:${PYTHONPATH}"
 
-# AWS 
+# AWS for
 
 
 # Run app.py when the container launches
