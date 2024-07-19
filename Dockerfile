@@ -31,7 +31,7 @@ COPY saved_models/xgb_model.pkl /app/saved_models/xgb_model.pkl
 # Set PYTHONPATH to include src folder
 ENV PYTHONPATH="/app/src:${PYTHONPATH}"
 
-# AWS 
+# AWS for
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]
