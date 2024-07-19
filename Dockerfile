@@ -25,6 +25,9 @@ EXPOSE 8999
 COPY src/ /app/src
 COPY saved_models/ /app/saved_models
 
+RUN mkdir -p /app/saved_models
+COPY saved_models/xgb_model.pkl /app/saved_models/xgb_model.pkl
+
 # Set PYTHONPATH to include src folder
 ENV PYTHONPATH="/app/src:${PYTHONPATH}"
 
