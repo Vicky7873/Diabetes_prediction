@@ -18,15 +18,15 @@ COPY requirements.txt .
 RUN python -m pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code into the container
-COPY . .
+# COPY . .
 
 # Make port 8888 available to the world outside this container
 
-# COPY src/ /app/src
-# COPY saved_models/ /app/saved_models
+COPY src/ /app/src
+COPY saved_models/ /app/saved_models
 
-RUN mkdir -p /app/saved_models
-COPY saved_models/xgb_model.pkl /app/saved_models/xgb_model.pkl
+# RUN mkdir -p /app/saved_models
+# COPY saved_models/xgb_model.pkl /app/saved_models/xgb_model.pkl
 
 EXPOSE 8999
 
