@@ -18,7 +18,7 @@ COPY requirements.txt .
 RUN python -m pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code into the container
-# COPY . .
+COPY . .
 
 # Make port 8888 available to the world outside this container
 
