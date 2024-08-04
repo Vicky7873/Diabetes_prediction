@@ -41,4 +41,6 @@ COPY . /app
 
 RUN pip install -r requirements.txt
 
+EXPOSE 8999
+
 CMD ["python3", "app.py"]
