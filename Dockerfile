@@ -17,23 +17,16 @@ COPY requirements.txt .
 # Install any needed packages specified in requirements.txt
 RUN python -m pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code into the container
-COPY . .
-
-# Make port 8888 available to the world outside this container
-
+# Copy the application code into the container
 COPY src/ /app/src
 COPY saved_models/ /app/saved_models
+COPY app.py /app/app.py
 
-# RUN mkdir -p /app/saved_models
-# COPY saved_models/xgb_model.pkl /app/saved_models/xgb_model.pkl
-
+# Make port 8999 available to the world outside this container
 EXPOSE 8999
 
 # Set PYTHONPATH to include src folder
-ENV PYTHONPATH="/app/src:${PYTHONPATH}"
-
-# AWS for
+ENV PYTHONPATH="/app/src"
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]
